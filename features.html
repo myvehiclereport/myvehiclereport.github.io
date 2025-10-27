@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Vehicle Report Features</title>
+<meta name="description" content="Discover all the features of My Vehicle Report, your complete car maintenance and tracking app.">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #E8E8E8;
+    background: #1F2123;
+    min-height: 100vh;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+header { text-align: center; padding: 2rem 0; }
+
+h1 { font-size: 2.8rem; color: #FFB45A; margin-bottom: 0.5rem; }
+p.tagline { color: #CFCFCF; font-size: 1.1rem; margin-bottom: 2rem; font-weight: 300; }
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.feature-card {
+    background: #2B2D30;
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid #3C3F42;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255,180,90,0.3);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #BB6B00, #FFB45A);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1F2123;
+    font-size: 2rem;
+    margin: 0 auto 1.5rem;
+}
+
+.feature-card h3 { font-size: 1.5rem; color: #FFFFFF; margin-bottom: 1rem; }
+.feature-card p { color: #CFCFCF; line-height: 1.6; }
+
+footer {
+    background: #1F2123;
+    color: #E8E8E8;
+    padding: 3rem 0;
+    margin-top: 4rem;
+    text-align: center;
+}
+
+footer a { color: #FFB45A; text-decoration: none; margin: 0 0.5rem; }
+footer a:hover { text-decoration: underline; }
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    .features-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>My Vehicle Report Features</h1>
+        <p class="tagline">Organize and track every detail of your car's history with ease.</p>
+    </header>
+
+    <section class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">🛠️</div>
+            <h3>Maintenance Tracking</h3>
+            <p>Keep a detailed record of all services, repairs, and parts for each vehicle. Never miss a scheduled maintenance again.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">⛽</div>
+            <h3>Fuel Economy</h3>
+            <p>Monitor fuel usage and calculate efficiency trends over time to optimize performance and save money.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Mileage Analytics</h3>
+            <p>Analyze mileage trends, track driving habits, and visualize reports to make informed maintenance decisions.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🔔</div>
+            <h3>Reminders & Alerts</h3>
+            <p>Set custom reminders for maintenance, inspections, or renewals. Stay on top of every task related to your vehicle.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3>Privacy & Security</h3>
+            <p>Your data stays private and secure on your device. No ads, no subscriptions, just a clean experience.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📱</div>
+            <h3>Easy Sync</h3>
+            <p>Sync your data across multiple iOS devices seamlessly for continuous access wherever you are.</p>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>© 2025 Trevor Abrahamson. All rights reserved. | <a href="./privacy-policy.html">Privacy Policy</a></p>
+</footer>
+</body>
+</html>
