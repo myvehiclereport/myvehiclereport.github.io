@@ -20,6 +20,10 @@ body {
     min-height: 100vh;
 }
 
+a {
+    text-decoration: none;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -54,13 +58,15 @@ h1 {
     text-align: center;
 }
 
-.hero h2 {
+.hero-heading,
+.cta-heading {
     font-size: 2.2rem;
     color: #FFB45A;
     margin-bottom: 1rem;
 }
 
-.hero p {
+.hero-text,
+.cta-text {
     font-size: 1.1rem;
     color: #CFCFCF;
     max-width: 600px;
@@ -96,20 +102,9 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #1F2123;
     font-size: 2rem;
     margin: 0 auto 1.5rem;
-}
-
-.feature-card h3 {
-    font-size: 1.5rem;
-    color: #FFFFFF;
-    margin-bottom: 1rem;
-}
-
-.feature-card p {
-    color: #CFCFCF;
-    line-height: 1.6;
+    color: #1F2123;
 }
 
 .cta-section {
@@ -132,26 +127,15 @@ h1 {
     padding: 1rem 2rem;
     background: #BB6B00;
     color: #1F2123;
-    text-decoration: none;
     border-radius: 12px;
     font-weight: 600;
     transition: all 0.3s ease;
-    border: none;
     cursor: pointer;
 }
 
 .btn:hover {
     background: #FFB45A;
-    color: #1F2123;
     transform: translateY(-2px);
-}
-
-.btn-appstore {
-    background: #000;
-}
-
-.btn-appstore:hover {
-    background: #333;
 }
 
 .btn-outline {
@@ -163,6 +147,16 @@ h1 {
 .btn-outline:hover {
     background: #FFB45A;
     color: #1F2123;
+}
+
+.btn-appstore {
+    background: linear-gradient(135deg, #FFB45A, #FF8C42);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.btn-appstore:hover {
+    filter: brightness(1.1);
 }
 
 footer {
@@ -186,7 +180,6 @@ footer {
 
 .footer-section a {
     color: #CFCFCF;
-    text-decoration: none;
     display: block;
     margin-bottom: 0.5rem;
     transition: color 0.3s ease;
@@ -203,6 +196,12 @@ footer {
     color: #86868b;
 }
 
+.note {
+    color: #CFCFCF;
+    margin-top: 1rem;
+    opacity: 0.8;
+}
+
 @media (max-width: 768px) {
     h1 { font-size: 2.2rem; }
     .tagline { font-size: 1rem; }
@@ -214,6 +213,7 @@ footer {
 </style>
 </head>
 <body>
+
 <div class="container">
     <header>
         <h1>My Vehicle Report</h1>
@@ -221,8 +221,8 @@ footer {
     </header>
 
     <section class="hero">
-        <h2>Take Control of Your Vehicle's Story</h2>
-        <p>From routine maintenance to fuel efficiency, keep everything organized in one beautiful, private app designed for car owners who value their time and their ride.</p>
+        <h2 class="hero-heading">Take Control of Your Vehicle's Story</h2>
+        <p class="hero-text">Track maintenance, fuel efficiency, and mileage in one beautiful, private app designed for drivers who value their time and their ride.</p>
         <div class="cta-buttons">
             <a href="#features" class="btn btn-outline">Explore Features</a>
             <a href="./privacy-policy.html" class="btn">Privacy Policy</a>
@@ -230,44 +230,37 @@ footer {
     </section>
 
     <section class="features-grid" id="features">
-    <div class="feature-card">
-        <div class="feature-icon">🛠️</div>
-        <h3>Maintenance Tracking</h3>
-        <p>Record all service, repairs, and parts history for each of your vehicles, so nothing is ever forgotten.</p>
-    </div>
-    <div class="feature-card">
-        <div class="feature-icon">⛽</div>
-        <h3>Fuel Economy</h3>
-        <p>Track fuel consumption and calculate efficiency over time to save money and optimize performance.</p>
-    </div>
-    <div class="feature-card">
-        <div class="feature-icon">📊</div>
-        <h3>Mileage Analytics</h3>
-        <p>Visualize your mileage trends and maintenance schedules with easy-to-read charts and reports.</p>
-    </div>
-    <div class="feature-card">
-        <div class="feature-icon">💾</div>
-        <h3>Export & Import Vehicle Data</h3>
-        <p>Easily export all your vehicle history to share with other devices or backup, and import it back seamlessly whenever needed.</p>
-    </div>
-</section>
+        <div class="feature-card">
+            <div class="feature-icon">🛠️</div>
+            <h3>Maintenance Tracking</h3>
+            <p>Record all service, repairs, and parts history so nothing is forgotten.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">⛽</div>
+            <h3>Fuel Economy</h3>
+            <p>Track consumption and efficiency for cost savings and better performance.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Mileage Analytics</h3>
+            <p>Visualize trends and maintenance schedules with clear reports.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">💾</div>
+            <h3>Export & Import</h3>
+            <p>Easily export and restore your full vehicle history across devices.</p>
+        </div>
+    </section>
 
     <section class="cta-section">
-    <h2 style="color: #FFB45A; font-size: 2.2rem; margin-bottom: 1rem;">Ready to Get Started?</h2>
-    <p style="color: #CFCFCF; margin-bottom: 2rem; font-size: 1.1rem;">Organize your car history efficiently and securely.</p>
-    <div class="cta-buttons">
-        <a href="https://apps.apple.com/app" 
-           style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #FFB45A, #FF8C42); color: #1d1d1f; font-weight: 700; font-size: 1.1rem; border-radius: 12px; text-decoration: none; transition: all 0.3s ease;" 
-           onmouseover="this.style.filter='brightness(1.1)'" 
-           onmouseout="this.style.filter='brightness(1)'">
-            <span>Download on the</span>
-            <span>App Store</span>
-        </a>
-        <a href="./privacy-policy.html" class="btn" style="padding: 1rem 2rem;">Privacy Policy</a>
-    </div>
-    <p style="color: #CFCFCF; margin-top: 1rem; opacity: 0.8;">Free to download • No subscriptions • One-time purchase</p>
-</section>
-
+        <h2 class="cta-heading">Ready to Get Started?</h2>
+        <p class="cta-text">Organize your car history efficiently and securely.</p>
+        <div class="cta-buttons">
+            <a href="https://apps.apple.com/app" class="btn btn-appstore">Download on the App Store</a>
+            <a href="./privacy-policy.html" class="btn">Privacy Policy</a>
+        </div>
+        <p class="note">Free to download • No subscriptions • One-time purchase</p>
+    </section>
 </div>
 
 <footer>
@@ -275,7 +268,7 @@ footer {
         <div class="footer-content">
             <div class="footer-section">
                 <h3>My Vehicle Report</h3>
-                <p style="color: #86868b;">Your car's complete history, made simple.</p>
+                <p class="note">Your car's complete history, made simple.</p>
             </div>
             <div class="footer-section">
                 <h3>Resources</h3>
@@ -295,5 +288,6 @@ footer {
         </div>
     </div>
 </footer>
+
 </body>
 </html>
