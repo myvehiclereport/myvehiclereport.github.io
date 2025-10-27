@@ -421,7 +421,7 @@
             <p style="color: white; margin-bottom: 2rem; font-size: 1.2rem;">Join thousands of car owners who trust My Vehicle Report</p>
             
             <div class="cta-buttons">
-                <a href="https://apps.apple.com/app/idYOUR_APP_ID_HERE" class="btn btn-appstore">
+                <a href="https://apps.apple.com/app/" class="btn btn-appstore">
                     <span>Download on the</span>
                     <span style="font-size: 1.2rem; font-weight: 700;">App Store</span>
                 </a>
@@ -429,7 +429,7 @@
             </div>
             
             <p style="color: white; margin-top: 1rem; opacity: 0.8;">
-                Free to download • No subscriptions • One-time purchase
+                Free to download & Use• No subscriptions • One-time purchase for exporting and importing
             </p>
         </section>
     </div>
@@ -445,8 +445,7 @@
                 <div class="footer-section">
                     <h3>Resources</h3>
                     <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="mailto:support@myvehiclereport.com">Support</a>
-                    <a href="mailto:contact@myvehiclereport.com">Contact Us</a>
+                    <a href="mailto:swingsureta@gmail.com">Contact & Support</a>
                 </div>
                 
                 <div class="footer-section">
@@ -458,7 +457,7 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2024 My Vehicle Report. All rights reserved.</p>
+                <p>&copy; 2025 My Vehicle Report. All rights reserved.</p>
             </div>
         </div>
     </footer>
