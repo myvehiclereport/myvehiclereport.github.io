@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>My Vehicle Report — Complete Car Maintenance Tracker</title>
-<meta name="description" content="Track maintenance, fuel economy, and mileage in one simple app. Your car’s complete history, made easy.">
+<title>My Vehicle Report — Your Complete Car Maintenance & History Tracker</title>
+<meta name="description" content="Track your vehicle’s maintenance, fuel economy, and full history. My Vehicle Report is your personal CARFAX alternative for trusted vehicle insights.">
 
 <style>
 :root {
-    --bg-dark: #1f2123;
-    --bg-card: #2b2d30;
-    --accent: #ffb45a;
-    --accent-dark: #bb6b00;
-    --text-light: #e8e8e8;
-    --text-muted: #cfcfcf;
-    --border: #3c3f42;
-    --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --color-dark: #0e1114;
+    --color-mid: #1a1d21;
+    --color-light: #f4f4f4;
+    --color-accent: #0070f3;
+    --color-accent-dark: #0056b3;
+    --color-highlight: #f8c24e;
+    --color-muted: #9da3ad;
+    --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 * {
@@ -25,303 +25,312 @@
 }
 
 body {
-    font-family: var(--font-main);
-    background-color: var(--bg-dark);
-    color: var(--text-light);
+    font-family: var(--font);
+    background-color: var(--color-dark);
+    color: var(--color-light);
     line-height: 1.6;
-    min-height: 100vh;
     scroll-behavior: smooth;
-}
-
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
 }
 
 /* HEADER */
 header {
-    text-align: center;
-    padding: 3rem 0 2rem;
-    animation: fadeIn 1s ease forwards;
+    background: var(--color-mid);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 3rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-h1 {
-    font-size: 3rem;
+header h1 {
+    font-size: 1.8rem;
     font-weight: 800;
-    color: #fff;
+    color: var(--color-highlight);
 }
 
-.tagline {
-    font-size: 1.2rem;
-    color: var(--text-muted);
-    font-weight: 300;
-    margin-top: 0.5rem;
+nav a {
+    color: var(--color-light);
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--color-highlight);
 }
 
 /* HERO */
 .hero {
-    background: var(--bg-card);
-    border-radius: 28px;
+    position: relative;
+    background: linear-gradient(to bottom right, #14181c, #0c0f11);
+    padding: 6rem 2rem;
     text-align: center;
-    padding: 5rem 2rem;
-    margin: 3rem 0;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-    transition: all 0.4s ease;
+    background-image: url('https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1400&q=80');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
 }
 
-.hero:hover {
-    box-shadow: 0 25px 80px rgba(255, 180, 90, 0.1);
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    z-index: 0;
 }
 
-.hero-heading {
-    color: var(--accent);
-    font-size: 2.4rem;
-    font-weight: 700;
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
     margin-bottom: 1rem;
+    color: var(--color-highlight);
 }
 
-.hero-text {
-    max-width: 620px;
-    margin: 0 auto 2.5rem;
-    color: var(--text-muted);
-    font-size: 1.1rem;
+.hero p {
+    font-size: 1.2rem;
+    color: #d1d5db;
+    margin-bottom: 2rem;
 }
 
-/* BUTTONS */
-.cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
+.hero .btn {
+    background: var(--color-accent);
+    color: #fff;
     padding: 1rem 2rem;
-    border-radius: 12px;
+    border-radius: 8px;
     font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
     text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.btn-primary {
-    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-    color: var(--bg-dark);
-}
-
-.btn-primary:hover {
-    filter: brightness(1.1);
+.hero .btn:hover {
+    background: var(--color-accent-dark);
     transform: translateY(-2px);
 }
 
-.btn-outline {
-    border: 2px solid var(--accent);
-    color: var(--accent);
-    background: transparent;
-}
-
-.btn-outline:hover {
-    background: var(--accent);
-    color: var(--bg-dark);
-    transform: translateY(-2px);
+/* TRUST BAR */
+.trust-bar {
+    background: #fff;
+    color: #222;
+    text-align: center;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
 }
 
 /* FEATURES */
+.features {
+    padding: 5rem 2rem;
+    background: var(--color-mid);
+    text-align: center;
+}
+
+.features h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--color-highlight);
+}
+
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    margin: 4rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .feature-card {
-    background: var(--bg-card);
-    border-radius: 16px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
     padding: 2rem;
-    text-align: center;
-    border: 1px solid var(--border);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .feature-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 40px rgba(255, 180, 90, 0.25);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
 }
 
 .feature-icon {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, var(--accent-dark), var(--accent));
-    color: var(--bg-dark);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    margin: 0 auto 1.5rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-highlight);
 }
 
 /* CTA SECTION */
 .cta-section {
+    background: linear-gradient(135deg, var(--color-accent-dark), var(--color-accent));
+    color: #fff;
     text-align: center;
     padding: 5rem 2rem;
 }
 
-.cta-heading {
-    color: var(--accent);
+.cta-section h3 {
     font-size: 2.2rem;
-    font-weight: 700;
     margin-bottom: 1rem;
 }
 
-.cta-text {
-    color: var(--text-muted);
-    max-width: 600px;
-    margin: 0 auto 2rem;
+.cta-section p {
+    color: #e0e0e0;
+    margin-bottom: 2rem;
 }
 
-.note {
-    color: var(--text-muted);
-    opacity: 0.8;
-    margin-top: 1rem;
+.cta-buttons a {
+    display: inline-block;
+    background: #fff;
+    color: var(--color-accent-dark);
+    font-weight: 700;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    margin: 0.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta-buttons a:hover {
+    background: var(--color-highlight);
+    color: #000;
+    transform: translateY(-2px);
 }
 
 /* FOOTER */
 footer {
-    background: var(--bg-dark);
-    color: var(--text-muted);
-    padding: 3rem 0;
-    border-top: 1px solid var(--border);
+    background: #0a0b0c;
+    color: #ccc;
+    padding: 3rem 2rem;
 }
 
-.footer-content {
+.footer-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 2rem;
-    margin-bottom: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.footer-section h3 {
+footer h4 {
     color: #fff;
     margin-bottom: 1rem;
 }
 
-.footer-section a {
+footer a {
+    color: #ccc;
+    text-decoration: none;
     display: block;
-    color: var(--text-muted);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
     transition: color 0.3s ease;
 }
 
-.footer-section a:hover {
-    color: var(--accent);
+footer a:hover {
+    color: var(--color-highlight);
 }
 
 .copyright {
     text-align: center;
-    color: #86868b;
+    margin-top: 2rem;
     font-size: 0.9rem;
-    padding-top: 2rem;
-}
-
-/* ANIMATIONS */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    color: #777;
 }
 
 @media (max-width: 768px) {
-    h1 { font-size: 2.2rem; }
-    .hero { padding: 3rem 1rem; }
-    .cta-buttons { flex-direction: column; }
-    .btn { width: 100%; max-width: 280px; }
+    .hero h2 { font-size: 2rem; }
+    header { flex-direction: column; gap: 0.5rem; }
+    nav { text-align: center; }
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
-    <header>
-        <h1>My Vehicle Report</h1>
-        <p class="tagline">Your car’s complete history, organized and accessible</p>
-    </header>
+<header>
+    <h1>My Vehicle Report</h1>
+    <nav>
+        <a href="#features">Features</a>
+        <a href="#download">Download</a>
+        <a href="./privacy-policy.html">Privacy</a>
+        <a href="mailto:swingsureta@gmail.com">Support</a>
+    </nav>
+</header>
 
-    <section class="hero">
-        <h2 class="hero-heading">Take Control of Your Vehicle’s Story</h2>
-        <p class="hero-text">
-            Track maintenance, fuel efficiency, and mileage in one intuitive, private app — built for drivers who value time and care about their ride.
-        </p>
-        <div class="cta-buttons">
-            <a href="#features" class="btn btn-outline">Explore Features</a>
-            <a href="./privacy-policy.html" class="btn btn-primary">Privacy Policy</a>
-        </div>
-    </section>
+<section class="hero">
+    <div class="hero-content">
+        <h2>Know Your Car Like Never Before</h2>
+        <p>Track your vehicle’s maintenance, mileage, and history — all in one trusted dashboard.  
+        Built for drivers, dealerships, and detail-oriented car owners.</p>
+        <a href="#download" class="btn">Get the App</a>
+    </div>
+</section>
 
-    <section id="features" class="features-grid">
+<div class="trust-bar">
+    Trusted by thousands of drivers. Backed by accurate data. Inspired by CARFAX simplicity.
+</div>
+
+<section id="features" class="features">
+    <h3>Everything You Need for Vehicle Transparency</h3>
+    <div class="features-grid">
         <div class="feature-card">
             <div class="feature-icon">🛠️</div>
-            <h3>Maintenance Tracking</h3>
-            <p>Log all services, repairs, and parts — never lose track of your car’s health again.</p>
+            <h4>Maintenance Tracking</h4>
+            <p>Keep every service and repair documented for resale confidence and long-term reliability.</p>
         </div>
         <div class="feature-card">
             <div class="feature-icon">⛽</div>
-            <h3>Fuel Economy</h3>
-            <p>Monitor fuel costs and efficiency to maximize performance and savings.</p>
+            <h4>Fuel Economy Insights</h4>
+            <p>Monitor consumption and costs for smarter driving and improved performance.</p>
         </div>
         <div class="feature-card">
-            <div class="feature-icon">📊</div>
-            <h3>Mileage Analytics</h3>
-            <p>Visualize trends, track distance, and predict upcoming maintenance.</p>
+            <div class="feature-icon">📈</div>
+            <h4>Performance Analytics</h4>
+            <p>Understand your vehicle’s trends, mileage health, and maintenance needs before they arise.</p>
         </div>
         <div class="feature-card">
             <div class="feature-icon">💾</div>
-            <h3>Export & Import</h3>
-            <p>Transfer your entire vehicle history securely between devices.</p>
-        </div>
-    </section>
-
-    <section class="cta-section">
-        <h2 class="cta-heading">Ready to Get Started?</h2>
-        <p class="cta-text">Keep your car records organized — all in one place, for life.</p>
-        <div class="cta-buttons">
-            <a href="https://apps.apple.com/us/app/my-vehicle-report/id6754545296" class="btn btn-primary">Download on the App Store</a>
-            <a href="./privacy-policy.html" class="btn btn-outline">Privacy Policy</a>
-        </div>
-        <p class="note">Free to download • No subscriptions • One-time purchase</p>
-    </section>
-</div>
-
-<footer>
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>My Vehicle Report</h3>
-                <p class="note">Your car’s complete history, made simple.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Resources</h3>
-                <a href="./privacy-policy.html">Privacy Policy</a>
-                <a href="mailto:swingsureta@gmail.com">Support</a>
-                <a href="mailto:swingsureta@gmail.com">Contact Us</a>
-            </div>
-            <div class="footer-section">
-                <h3>Features</h3>
-                <a href="#features">Maintenance Tracking</a>
-                <a href="#features">Fuel Economy</a>
-                <a href="#features">Mileage Analytics</a>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>© 2025 Trevor Abrahamson. All rights reserved.</p>
+            <h4>Export & Restore</h4>
+            <p>Securely save and transfer your complete vehicle record between devices or buyers.</p>
         </div>
     </div>
+</section>
+
+<section id="download" class="cta-section">
+    <h3>Ready to Drive Smarter?</h3>
+    <p>Join the next generation of vehicle owners keeping track of every detail with confidence.</p>
+    <div class="cta-buttons">
+        <a href="https://apps.apple.com/us/app/my-vehicle-report/id6754545296">Download on the App Store</a>
+        <a href="./privacy-policy.html">Privacy Policy</a>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-grid">
+        <div>
+            <h4>My Vehicle Report</h4>
+            <p>Your trusted companion for car history and maintenance tracking.</p>
+        </div>
+        <div>
+            <h4>Company</h4>
+            <a href="./privacy-policy.html">Privacy Policy</a>
+            <a href="mailto:swingsureta@gmail.com">Contact Us</a>
+        </div>
+        <div>
+            <h4>Features</h4>
+            <a href="#features">Maintenance Tracking</a>
+            <a href="#features">Fuel Economy</a>
+            <a href="#features">Analytics</a>
+        </div>
+    </div>
+    <p class="copyright">© 2025 Trevor Abrahamson. All rights reserved.</p>
 </footer>
 
 </body>
