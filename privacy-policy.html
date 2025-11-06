@@ -5,408 +5,326 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy - My Vehicle Report</title>
 <meta name="description" content="Comprehensive Privacy Policy for My Vehicle Report. Learn how we handle, protect, and manage your data with full transparency.">
+
 <style>
+:root {
+  --bg-dark: #0e1114;
+  --bg-mid: #1a1d21;
+  --text-light: #f4f4f4;
+  --accent: #f8c24e;
+  --accent-blue: #0070f3;
+  --border: #3c3f42;
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.6;
-    color: #E8E8E8;
-    background: #1F2123;
-    min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  line-height: 1.6;
+  min-height: 100vh;
 }
 
+/* HEADER */
+header {
+  background: var(--bg-mid);
+  color: white;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+header h1 {
+  color: var(--accent);
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+nav a {
+  color: #ccc;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* PAGE CONTAINER */
 .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    background: #2B2D30;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    margin-top: 40px;
-    margin-bottom: 40px;
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 40px 20px;
+  background: var(--bg-mid);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-h1 { font-size: 2.5rem; color: #FFB45A; margin-bottom: 1rem; text-align: center; }
-h2 { font-size: 1.8rem; color: #FFFFFF; margin-top: 30px; margin-bottom: 15px; }
-h3 { font-size: 1.3rem; color: #FFB45A; margin-top: 20px; margin-bottom: 10px; }
-p, li { color: #CFCFCF; margin-bottom: 1rem; }
+/* HEADINGS */
+h1 {
+  font-size: 2.5rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+h2 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+h3 {
+  font-size: 1.3rem;
+  color: var(--accent);
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+p, li {
+  color: #cfcfcf;
+  margin-bottom: 1rem;
+}
 ul { margin-left: 20px; margin-bottom: 1rem; }
 
-.last-updated { color: #A0A0A0; font-size: 14px; margin-bottom: 30px; text-align: center; }
+.last-updated {
+  color: #a0a0a0;
+  font-size: 14px;
+  margin-bottom: 30px;
+  text-align: center;
+}
 
+/* BOX STYLES */
 .highlight-box {
-    background: rgba(255,180,90,0.1);
-    padding: 20px;
-    border-radius: 12px;
-    margin: 20px 0;
-    border-left: 4px solid #FFB45A;
+  background: rgba(248, 194, 78, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px 0;
+  border-left: 4px solid var(--accent);
 }
-
 .info-box {
-    background: rgba(100,150,255,0.1);
-    padding: 15px;
-    border-radius: 8px;
-    margin: 15px 0;
-    border-left: 4px solid #6496FF;
+  background: rgba(0,112,243,0.08);
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+  border-left: 4px solid var(--accent-blue);
 }
-
 .warning-box {
-    background: rgba(255,100,100,0.1);
-    padding: 15px;
-    border-radius: 8px;
-    margin: 15px 0;
-    border-left: 4px solid #FF6464;
+  background: rgba(255,100,100,0.08);
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+  border-left: 4px solid #ff6464;
 }
 
+/* TABLE */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: #2c2e31;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.data-table th {
+  background: var(--accent);
+  color: var(--bg-dark);
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+}
+.data-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.data-table tr:last-child td { border-bottom: none; }
+
+/* FOOTER */
 .footer {
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid #3C3F42;
-    text-align: center;
-    color: #A0A0A0;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: #a0a0a0;
 }
-
-.footer a { color: #FFB45A; text-decoration: none; margin: 0 0.5rem; }
+.footer a {
+  color: var(--accent);
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
 .footer a:hover { text-decoration: underline; }
 
-.data-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    background: #3C3F42;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.data-table th {
-    background: #FFB45A;
-    color: #1F2123;
-    padding: 12px;
-    text-align: left;
-    font-weight: 600;
-}
-
-.data-table td {
-    padding: 12px;
-    border-bottom: 1px solid #4A4D50;
-}
-
-.data-table tr:last-child td {
-    border-bottom: none;
-}
-
 @media (max-width: 768px) {
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.5rem; }
-    .data-table { font-size: 14px; }
-    .data-table th, .data-table td { padding: 8px; }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  .data-table { font-size: 14px; }
+  .data-table th, .data-table td { padding: 8px; }
+  header { flex-direction: column; gap: 0.5rem; text-align: center; }
+  nav a { margin: 0 0.7rem; }
 }
 </style>
 </head>
 <body>
+
+<header>
+  <h1>My Vehicle Report</h1>
+  <nav>
+    <a href="./index.html">Home</a>
+    <a href="./privacy-policy.html">Privacy</a>
+    <a href="./terms.html">Terms</a>
+  </nav>
+</header>
+
 <div class="container">
-    <h1>Privacy Policy</h1>
-    <p class="last-updated"><strong>Last Updated:</strong> November 2, 2025</p>
-    <p class="last-updated"><strong>Effective Date:</strong> November 2, 2025</p>
+  <h1>Privacy Policy</h1>
+  <p class="last-updated"><strong>Last Updated:</strong> November 2, 2025</p>
+  <p class="last-updated"><strong>Effective Date:</strong> November 2, 2025</p>
 
-    <div class="highlight-box">
-        <h2>Our Commitment to Your Privacy</h2>
-        <p>My Vehicle Report ("we," "our," or "us") is committed to protecting your privacy and being transparent about how we handle your personal information. This comprehensive Privacy Policy explains in detail how we collect, use, disclose, and protect your information when you use our mobile application and related services.</p>
-    </div>
+  <div class="highlight-box">
+    <h2>Our Commitment to Your Privacy</h2>
+    <p>My Vehicle Report ("we," "our," or "us") is committed to protecting your privacy and being transparent about how we handle your personal information. This comprehensive Privacy Policy explains in detail how we collect, use, disclose, and protect your information when you use our mobile application and related services.</p>
+  </div>
 
-    <h2>1. Detailed Information Collection</h2>
-    
-    <h3>1.1 Personal Information You Provide</h3>
-    <table class="data-table">
-        <thead>
-            <tr>
-                <th>Data Category</th>
-                <th>Specific Data Points</th>
-                <th>Purpose</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>Account Information</strong></td>
-                <td>Email address, display name, user ID, account creation date, last login timestamp</td>
-                <td>User authentication, account management, service delivery</td>
-            </tr>
-            <tr>
-                <td><strong>Profile Data</strong></td>
-                <td>User type (individual/dealer), dealer business information (if applicable), contact preferences</td>
-                <td>Service customization, marketplace functionality</td>
-            </tr>
-            <tr>
-                <td><strong>Vehicle Listings</strong></td>
-                <td>Vehicle make, model, year, VIN, mileage, condition, price, description, photos, location data</td>
-                <td>Marketplace operations, buyer-seller matching</td>
-            </tr>
-            <tr>
-                <td><strong>Communication Data</strong></td>
-                <td>Chat messages, timestamps, participant IDs, message content</td>
-                <td>Facilitating user communications, dispute resolution</td>
-            </tr>
-            <tr>
-                <td><strong>Transaction Data</strong></td>
-                <td>Saved listings, promotion purchases, in-app purchase receipts</td>
-                <td>Service features, purchase verification</td>
-            </tr>
-        </tbody>
-    </table>
+  <h2>1. Information We Collect</h2>
+  <h3>1.1 Personal Information You Provide</h3>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Examples</th>
+        <th>Purpose</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Account Information</td>
+        <td>Email, display name, user ID, creation date</td>
+        <td>Authentication and service access</td>
+      </tr>
+      <tr>
+        <td>Vehicle Listings</td>
+        <td>Make, model, VIN, mileage, photos</td>
+        <td>Marketplace operations</td>
+      </tr>
+      <tr>
+        <td>Communication</td>
+        <td>Chat content, participants, timestamps</td>
+        <td>Secure buyer-seller messaging</td>
+      </tr>
+      <tr>
+        <td>Transactions</td>
+        <td>Promotion purchases, receipts</td>
+        <td>Verification and billing</td>
+      </tr>
+    </tbody>
+  </table>
 
-    <h3>1.2 Automatically Collected Information</h3>
-    <ul>
-        <li><strong>Device Information:</strong> Device type, operating system version, unique device identifiers</li>
-        <li><strong>Usage Data:</strong> Feature usage patterns, session duration, interaction timestamps</li>
-        <li><strong>Technical Data:</strong> App crash reports, performance metrics, error logs</li>
-        <li><strong>Network Information:</strong> IP address (anonymized), connection type</li>
-    </ul>
+  <h3>1.2 Automatically Collected</h3>
+  <ul>
+    <li>Device type, operating system version, and session duration</li>
+    <li>Feature usage data and error logs</li>
+    <li>IP address (anonymized) and connection type</li>
+  </ul>
 
-    <div class="info-box">
-        <p><strong>Note:</strong> We do not use cookies, web beacons, or similar tracking technologies in our mobile application.</p>
-    </div>
+  <div class="info-box">
+    <p><strong>Note:</strong> We do not use cookies or web trackers in the mobile app.</p>
+  </div>
 
-    <h2>2. Comprehensive Data Usage</h2>
+  <h2>2. Data Usage</h2>
+  <ul>
+    <li>Operate and improve our marketplace and app</li>
+    <li>Provide customer support and notifications</li>
+    <li>Prevent fraud and enforce our terms</li>
+    <li>Analyze trends and enhance user experience</li>
+  </ul>
 
-    <h3>2.1 Service Provision and Operation</h3>
-    <ul>
-        <li>Create and maintain your user account</li>
-        <li>Process and display vehicle listings in our marketplace</li>
-        <li>Facilitate secure communication between buyers and sellers</li>
-        <li>Provide vehicle maintenance tracking features</li>
-        <li>Enable saved listings and personalized recommendations</li>
-    </ul>
+  <h2>3. Data Sharing</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Recipient</th>
+        <th>Data Shared</th>
+        <th>Purpose</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Other Users</td>
+        <td>Listing data and messages</td>
+        <td>Marketplace functionality</td>
+      </tr>
+      <tr>
+        <td>Service Providers</td>
+        <td>Firebase, analytics, and support tools</td>
+        <td>Infrastructure and operations</td>
+      </tr>
+      <tr>
+        <td>Legal Authorities</td>
+        <td>Required data upon lawful request</td>
+        <td>Compliance and security</td>
+      </tr>
+    </tbody>
+  </table>
 
-    <h3>2.2 Communication and Support</h3>
-    <ul>
-        <li>Respond to your inquiries and provide customer support</li>
-        <li>Send important service notifications and updates</li>
-        <li>Facilitate marketplace transactions and communications</li>
-        <li>Notify you of relevant marketplace activity</li>
-    </ul>
+  <div class="warning-box">
+    <p><strong>Important:</strong> We do not sell, rent, or trade your personal data to advertisers.</p>
+  </div>
 
-    <h3>2.3 Safety, Security, and Compliance</h3>
-    <ul>
-        <li>Monitor and prevent fraudulent activities</li>
-        <li>Review and act on reported content</li>
-        <li>Enforce our Terms of Service and community guidelines</li>
-        <li>Comply with legal obligations and regulatory requirements</li>
-    </ul>
+  <h2>4. Data Security</h2>
+  <ul>
+    <li>End-to-end encryption and TLS protection</li>
+    <li>Encrypted storage via Firebase</li>
+    <li>Regular audits and access controls</li>
+  </ul>
 
-    <h3>2.4 Service Improvement</h3>
-    <ul>
-        <li>Analyze usage patterns to improve user experience</li>
-        <li>Develop new features and enhance existing functionality</li>
-        <li>Optimize app performance and fix technical issues</li>
-    </ul>
+  <h2>5. Retention</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Data Type</th>
+        <th>Retention Period</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Account Data</td>
+        <td>Until deletion + 30 days</td>
+      </tr>
+      <tr>
+        <td>Listings</td>
+        <td>Until user deletion</td>
+      </tr>
+      <tr>
+        <td>Chats</td>
+        <td>7 days</td>
+      </tr>
+    </tbody>
+  </table>
 
-    <h2>3. Data Sharing and Disclosure</h2>
+  <h2>6. Your Rights</h2>
+  <ul>
+    <li>Access, correct, or delete your data</li>
+    <li>Opt-out of non-essential processing</li>
+    <li>Request portability or restriction</li>
+  </ul>
 
-    <h3>3.1 When We Share Your Information</h3>
-    <table class="data-table">
-        <thead>
-            <tr>
-                <th>Recipient</th>
-                <th>Information Shared</th>
-                <th>Purpose</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>Other Users</strong></td>
-                <td>Listing information, contact details (as provided), communication content</td>
-                <td>Marketplace functionality, transaction facilitation</td>
-            </tr>
-            <tr>
-                <td><strong>Service Providers</strong></td>
-                <td>Necessary data for service operation (see Section 4)</td>
-                <td>Infrastructure, analytics, customer support</td>
-            </tr>
-            <tr>
-                <td><strong>Legal Authorities</strong></td>
-                <td>Information required by law</td>
-                <td>Legal compliance, fraud prevention</td>
-            </tr>
-            <tr>
-                <td><strong>Business Transfers</strong></td>
-                <td>User data as asset</td>
-                <td>Mergers, acquisitions, bankruptcy</td>
-            </tr>
-        </tbody>
-    </table>
+  <div class="highlight-box">
+    <h2>Contact Us</h2>
+    <p>Email: <strong>swingsureta@gmail.com</strong></p>
+    <p>We aim to respond to all inquiries within 30 days.</p>
+  </div>
 
-    <div class="warning-box">
-        <p><strong>Important:</strong> We do not sell, rent, or trade your personal information to third parties for their marketing purposes.</p>
-    </div>
-
-    <h2>4. Third-Party Service Providers</h2>
-
-    <h3>4.1 Firebase Services (Google LLC)</h3>
-    <ul>
-        <li><strong>Firebase Authentication:</strong> Secure user authentication and account management</li>
-        <li><strong>Cloud Firestore:</strong> Database services for storing user data and listings</li>
-        <li><strong>Firebase Storage:</strong> Secure file storage for vehicle photos and documents</li>
-        <li><strong>Firebase Analytics:</strong> Anonymous usage analytics for service improvement</li>
-    </ul>
-
-    <h3>4.2 Apple Inc. Services</h3>
-    <ul>
-        <li><strong>App Store Connect:</strong> App distribution and in-app purchase processing</li>
-        <li><strong>Apple Push Notification Service:</strong> Delivery of app notifications</li>
-    </ul>
-
-    <h2>5. Data Security Measures</h2>
-
-    <h3>5.1 Technical Safeguards</h3>
-    <ul>
-        <li>End-to-end encryption for data in transit using TLS 1.2+</li>
-        <li>Data encryption at rest in Firebase services</li>
-        <li>Secure authentication using Firebase Auth with industry-standard protocols</li>
-        <li>Regular security updates and vulnerability assessments</li>
-    </ul>
-
-    <h3>5.2 Administrative Safeguards</h3>
-    <ul>
-        <li>Role-based access controls for team members</li>
-        <li>Regular privacy and security training for personnel</li>
-        <li>Incident response procedures and breach notification protocols</li>
-    </ul>
-
-    <h3>5.3 Physical Safeguards</h3>
-    <ul>
-        <li>Data stored in secure, SOC 2 compliant data centers (via Firebase)</li>
-        <li>Physical access controls and monitoring at data center facilities</li>
-    </ul>
-
-    <h2>6. Data Retention Policy</h2>
-
-    <table class="data-table">
-        <thead>
-            <tr>
-                <th>Data Type</th>
-                <th>Retention Period</th>
-                <th>Basis for Retention</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>Account Information</strong></td>
-                <td>Until account deletion + 30 days</td>
-                <td>Service provision, legal compliance</td>
-            </tr>
-            <tr>
-                <td><strong>Vehicle Listings</strong></td>
-                <td>Until deletion by user or account closure</td>
-                <td>Marketplace functionality</td>
-            </tr>
-            <tr>
-                <td><strong>Chat Messages</strong></td>
-                <td>7 days from sending</td>
-                <td>User privacy, data minimization</td>
-            </tr>
-            <tr>
-                <td><strong>Usage Analytics</strong></td>
-                <td>26 months</td>
-                <td>Service improvement, analytics</td>
-            </tr>
-            <tr>
-                <td><strong>Legal & Compliance Data</strong></td>
-                <td>As required by applicable law</td>
-                <td>Legal obligations</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h2>7. Your Privacy Rights</h2>
-
-    <h3>7.1 Access and Portability</h3>
-    <ul>
-        <li>Right to access personal information we hold about you</li>
-        <li>Right to receive your data in a structured, machine-readable format</li>
-        <li>Right to view your data through the app interface</li>
-    </ul>
-
-    <h3>7.2 Correction and Rectification</h3>
-    <ul>
-        <li>Right to correct inaccurate or incomplete personal information</li>
-        <li>Ability to update profile information directly in the app</li>
-        <li>Right to modify or update your vehicle listings</li>
-    </ul>
-
-    <h3>7.3 Deletion and Erasure</h3>
-    <ul>
-        <li>Right to delete your account and associated data</li>
-        <li>Ability to remove individual vehicle listings</li>
-        <li>Right to be forgotten, subject to legal retention requirements</li>
-    </ul>
-
-    <h3>7.4 Restriction and Objection</h3>
-    <ul>
-        <li>Right to object to certain data processing activities</li>
-        <li>Right to restrict processing in specific circumstances</li>
-        <li>Ability to opt-out of non-essential communications</li>
-    </ul>
-
-    <h2>8. International Data Transfers</h2>
-    <p>As a global service using Firebase infrastructure, your personal information may be transferred to, stored, and processed in countries outside of your residence, including the United States. We ensure appropriate safeguards are in place through:</p>
-    <ul>
-        <li>EU-U.S. Data Privacy Framework compliance (for Firebase/Google)</li>
-        <li>Standard Contractual Clauses where applicable</li>
-        <li>Adequacy decisions for countries with equivalent data protection</li>
-    </ul>
-
-    <h2>9. Children's Privacy</h2>
-    <p>My Vehicle Report is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that we have collected personal information from a child under 13, we will take steps to delete such information promptly.</p>
-
-    <h2>10. Legal Basis for Processing (GDPR)</h2>
-    <p>For users in the European Economic Area (EEA), United Kingdom, and Switzerland, we process your personal information based on the following legal grounds:</p>
-    <ul>
-        <li><strong>Contractual Necessity:</strong> Processing necessary for providing our services</li>
-        <li><strong>Legitimate Interests:</strong> Processing for service improvement and security</li>
-        <li><strong>Legal Obligation:</strong> Processing to comply with legal requirements</li>
-        <li><strong>Consent:</strong> Where we rely on consent, you may withdraw it at any time</li>
-    </ul>
-
-    <h2>11. California Privacy Rights (CCPA/CPRA)</h2>
-    <p>California residents have specific rights under the California Consumer Privacy Act:</p>
-    <ul>
-        <li>Right to know what personal information is collected, used, shared, or sold</li>
-        <li>Right to delete personal information</li>
-        <li>Right to opt-out of the sale of personal information</li>
-        <li>Right to non-discrimination for exercising CCPA rights</li>
-    </ul>
-    <p>We do not sell personal information as defined by the CCPA.</p>
-
-    <h2>12. Changes to This Policy</h2>
-    <p>We may update this Privacy Policy to reflect changes in our practices, services, or legal requirements. We will notify you of material changes by:</p>
-    <ul>
-        <li>Posting the updated policy in the app</li>
-        <li>Sending in-app notifications</li>
-        <li>Updating the "Last Updated" date</li>
-    </ul>
-    <p>Continued use of our services after changes constitutes acceptance of the updated policy.</p>
-
-    <h2>13. Data Protection Officer</h2>
-    <p>We have designated a data protection contact point for privacy-related inquiries:</p>
-    <p><strong>Email:</strong> swingsureta@gmail.com</p>
-    <p>We respond to all legitimate requests within the timeframes required by applicable law.</p>
-
-    <h2>14. Complaints and Regulatory Authority</h2>
-    <p>If you have concerns about our data practices, you have the right to lodge a complaint with your local data protection authority. For EEA residents, you may contact your national data protection authority.</p>
-
-    <div class="highlight-box">
-        <h2>Contact Information</h2>
-        <p>For questions, concerns, or to exercise your privacy rights, please contact us:</p>
-        <p><strong>Email:</strong> swingsureta@gmail.com</p>
-        <p><strong>Response Time:</strong> We aim to respond to all privacy-related inquiries within 30 days</p>
-        <p><strong>Verification:</strong> We may need to verify your identity before processing certain requests</p>
-    </div>
-
-    <div class="footer">
-        <p>© 2025 Trevor Abrahamson. All rights reserved.</p>
-        <p><a href="./index.html">← Back to Home</a> | <a href="./terms.html">Terms of Service</a></p>
-    </div>
+  <div class="footer">
+    <p>© 2025 Trevor Abrahamson. All rights reserved.</p>
+    <p><a href="./index.html">← Back to Home</a> | <a href="./terms.html">Terms of Service</a></p>
+  </div>
 </div>
+
 </body>
 </html>
