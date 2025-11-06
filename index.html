@@ -3,375 +3,335 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>My Vehicle Report — Marketplace</title>
-<meta name="description" content="Browse featured vehicles, track your car’s history, and drive smarter with My Vehicle Report.">
+<title>My Vehicle Report — Your Complete Car Maintenance & History Tracker</title>
+<meta name="description" content="Track your vehicle’s maintenance, fuel economy, and full history. My Vehicle Report is your personal CARFAX alternative for trusted vehicle insights.">
 
 <style>
 :root {
-  --bg-dark: #0e1114;
-  --bg-mid: #1a1d21;
-  --text-light: #f4f4f4;
-  --accent: #f8c24e;
-  --accent-blue: #0070f3;
+    --color-dark: #0e1114;
+    --color-mid: #1a1d21;
+    --color-light: #f4f4f4;
+    --color-accent: #0070f3;
+    --color-accent-dark: #0056b3;
+    --color-highlight: #f8c24e;
+    --color-muted: #9da3ad;
+    --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background-color: var(--bg-dark);
-  color: var(--text-light);
-  line-height: 1.6;
-  overflow-x: hidden;
+    font-family: var(--font);
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
 /* HEADER */
 header {
-  background: var(--bg-mid);
-  color: white;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    background: var(--color-mid);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 3rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 header h1 {
-  color: var(--accent);
-  font-weight: 800;
-  font-size: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--color-highlight);
 }
 
 nav a {
-  color: #ccc;
-  margin-left: 1.5rem;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
+    color: var(--color-light);
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: var(--accent);
+    color: var(--color-highlight);
 }
 
 /* HERO */
 .hero {
-  position: relative;
-  height: 70vh;
-  background-image: url("https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1600&q=80");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: relative;
+    background: linear-gradient(to bottom right, #14181c, #0c0f11);
+    padding: 6rem 2rem;
+    text-align: center;
+    background-image: url('https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1400&q=80');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
 }
 
 .hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.7);
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    z-index: 0;
 }
 
 .hero-content {
-  position: relative;
-  text-align: center;
-  z-index: 1;
-  color: white;
-  max-width: 700px;
-  padding: 1rem;
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.hero-content h2 {
-  font-size: 2.8rem;
-  color: var(--accent);
-  margin-bottom: 1rem;
+.hero h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--color-highlight);
 }
 
-.hero-content p {
-  font-size: 1.1rem;
-  color: #d1d5db;
-  margin-bottom: 2rem;
+.hero p {
+    font-size: 1.2rem;
+    color: #d1d5db;
+    margin-bottom: 2rem;
 }
 
-.hero-content .btn {
-  background: var(--accent);
-  color: black;
-  padding: 0.9rem 2rem;
-  border-radius: 6px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: background 0.3s ease, transform 0.2s ease;
+.hero .btn {
+    background: var(--color-accent);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.hero-content .btn:hover {
-  background: #ffd96a;
-  transform: translateY(-2px);
+.hero .btn:hover {
+    background: var(--color-accent-dark);
+    transform: translateY(-2px);
 }
 
 /* TRUST BAR */
 .trust-bar {
-  background: var(--accent);
-  color: black;
-  text-align: center;
-  font-weight: 600;
-  padding: 0.7rem 1rem;
-  letter-spacing: 0.5px;
+    background: #fff;
+    color: #222;
+    text-align: center;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
 }
 
-/* LISTINGS GRID */
-.marketplace {
-  max-width: 1200px;
-  margin: 4rem auto;
-  padding: 0 1.5rem;
+/* FEATURES */
+.features {
+    padding: 5rem 2rem;
+    background: var(--color-mid);
+    text-align: center;
 }
 
-.marketplace h3 {
-  text-align: center;
-  color: var(--accent);
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  font-weight: 700;
+.features h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--color-highlight);
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.card {
-  background: var(--bg-mid);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(255,255,255,0.08);
+.feature-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(255,255,255,0.1);
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
 }
 
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.card-content {
-  padding: 1.2rem;
-}
-
-.card-content h4 {
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.card-content .price {
-  color: var(--accent);
-  font-weight: 700;
-  font-size: 1.1rem;
-  margin: 0.4rem 0;
-}
-
-.card-content p {
-  font-size: 0.9rem;
-  color: #ccc;
-  margin-bottom: 0.5rem;
-}
-
-.card-content .tag {
-  display: inline-block;
-  background: var(--accent);
-  color: black;
-  font-size: 0.75rem;
-  padding: 0.25rem 0.7rem;
-  border-radius: 20px;
-  font-weight: 600;
-  margin-top: 0.5rem;
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-highlight);
 }
 
 /* CTA SECTION */
-.cta {
-  background: linear-gradient(135deg, #0048b3, #0070f3);
-  text-align: center;
-  padding: 4rem 1rem;
-  color: white;
+.cta-section {
+    background: linear-gradient(135deg, var(--color-accent-dark), var(--color-accent));
+    color: #fff;
+    text-align: center;
+    padding: 5rem 2rem;
 }
 
-.cta h3 {
-  font-size: 2rem;
-  color: var(--accent);
-  margin-bottom: 1rem;
+.cta-section h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
 }
 
-.cta p {
-  color: #e0e0e0;
-  max-width: 600px;
-  margin: 0 auto 2rem;
+.cta-section p {
+    color: #e0e0e0;
+    margin-bottom: 2rem;
 }
 
-.cta a {
-  background: var(--accent);
-  color: black;
-  padding: 0.8rem 1.8rem;
-  font-weight: 700;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background 0.3s ease, transform 0.2s ease;
+.cta-buttons a {
+    display: inline-block;
+    background: #fff;
+    color: var(--color-accent-dark);
+    font-weight: 700;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    margin: 0.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-.cta a:hover {
-  background: #ffd96a;
-  transform: translateY(-2px);
+.cta-buttons a:hover {
+    background: var(--color-highlight);
+    color: #000;
+    transform: translateY(-2px);
 }
 
 /* FOOTER */
 footer {
-  background: #0a0b0c;
-  color: #bbb;
-  text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
-  margin-top: 3rem;
+    background: #0a0b0c;
+    color: #ccc;
+    padding: 3rem 2rem;
 }
 
-@media (max-width: 600px) {
-  .hero-content h2 {
-    font-size: 2rem;
-  }
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer h4 {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+footer a {
+    color: #ccc;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.4rem;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--color-highlight);
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+@media (max-width: 768px) {
+    .hero h2 { font-size: 2rem; }
+    header { flex-direction: column; gap: 0.5rem; }
+    nav { text-align: center; }
 }
 </style>
 </head>
+
 <body>
 
 <header>
-  <h1>My Vehicle Report</h1>
-  <nav>
-    <a href="#listings">Marketplace</a>
-    <a href="#features">Features</a>
-    <a href="#download">App</a>
-  </nav>
+    <h1>My Vehicle Report</h1>
+    <nav>
+        <a href="#features">Features</a>
+        <a href="#download">Download</a>
+        <a href="./privacy-policy.html">Privacy</a>
+        <a href="mailto:swingsureta@gmail.com">Support</a>
+    </nav>
 </header>
 
 <section class="hero">
-  <div class="hero-content">
-    <h2>Discover. Track. Drive Smarter.</h2>
-    <p>Manage your car’s maintenance, mileage, and sales listings all in one dashboard — trusted by thousands of drivers.</p>
-    <a href="#listings" class="btn">Browse Listings</a>
-  </div>
+    <div class="hero-content">
+        <h2>Know Your Car Like Never Before</h2>
+        <p>Track your vehicle’s maintenance, mileage, and history — all in one trusted dashboard.  
+        Built for drivers, dealerships, and detail-oriented car owners.</p>
+        <a href="#download" class="btn">Get the App</a>
+    </div>
 </section>
 
 <div class="trust-bar">
-  Trusted by 5,000+ Drivers • Verified Listings • Secure Data
+    Trusted by thousands of drivers. Backed by accurate data. Inspired by CARFAX simplicity.
 </div>
 
-<section id="listings" class="marketplace">
-  <h3>Featured Vehicle Listings</h3>
-  <div class="grid" id="listingsGrid"></div>
+<section id="features" class="features">
+    <h3>Everything You Need for Vehicle Transparency</h3>
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">🛠️</div>
+            <h4>Maintenance Tracking</h4>
+            <p>Keep every service and repair documented for resale confidence and long-term reliability.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">⛽</div>
+            <h4>Fuel Economy Insights</h4>
+            <p>Monitor consumption and costs for smarter driving and improved performance.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📈</div>
+            <h4>Performance Analytics</h4>
+            <p>Understand your vehicle’s trends, mileage health, and maintenance needs before they arise.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">💾</div>
+            <h4>Export & Restore</h4>
+            <p>Securely save and transfer your complete vehicle record between devices or buyers.</p>
+        </div>
+    </div>
 </section>
 
-<section id="download" class="cta">
-  <h3>Ready to Get Started?</h3>
-  <p>Track your vehicle’s complete history and sell smarter with My Vehicle Report.</p>
-  <a href="https://apps.apple.com/us/app/my-vehicle-report/id6754545296">
-    Download on the App Store
-  </a>
+<section id="download" class="cta-section">
+    <h3>Ready to Drive Smarter?</h3>
+    <p>Join the next generation of vehicle owners keeping track of every detail with confidence.</p>
+    <div class="cta-buttons">
+        <a href="https://apps.apple.com/us/app/my-vehicle-report/id6754545296">Download on the App Store</a>
+        <a href="./privacy-policy.html">Privacy Policy</a>
+    </div>
 </section>
 
 <footer>
-  © 2025 Trevor Abrahamson — My Vehicle Report. All Rights Reserved.
-</footer>
-
-<script>
-const listings = [
-  {
-    title: "2020 Tesla Model 3 Performance",
-    price: 38999,
-    location: "Los Angeles, CA",
-    year: "2020",
-    make: "Tesla",
-    model: "Model 3",
-    mileage: 24500,
-    condition: "Excellent",
-    image: "https://images.unsplash.com/photo-1616789379759-974b62cb3225?auto=format&fit=crop&w=800&q=80",
-    tag: "Featured"
-  },
-  {
-    title: "2018 BMW M4 Coupe",
-    price: 49950,
-    location: "Miami, FL",
-    year: "2018",
-    make: "BMW",
-    model: "M4",
-    mileage: 36000,
-    condition: "Excellent",
-    image: "https://images.unsplash.com/photo-1606663151232-bb2c71e13d73?auto=format&fit=crop&w=800&q=80",
-    tag: "Spotlight"
-  },
-  {
-    title: "2022 Toyota Tacoma TRD Off-Road",
-    price: 34900,
-    location: "Denver, CO",
-    year: "2022",
-    make: "Toyota",
-    model: "Tacoma",
-    mileage: 15000,
-    condition: "Like New",
-    image: "https://images.unsplash.com/photo-1627454822431-3e0c9185d5b1?auto=format&fit=crop&w=800&q=80",
-    tag: "Urgent"
-  },
-  {
-    title: "2019 Ford F-150 Raptor",
-    price: 56900,
-    location: "Dallas, TX",
-    year: "2019",
-    make: "Ford",
-    model: "F-150 Raptor",
-    mileage: 42000,
-    condition: "Great",
-    image: "https://images.unsplash.com/photo-1616789459835-5fa0193a9b8b?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    title: "2023 Honda Civic Sport Touring",
-    price: 28900,
-    location: "Seattle, WA",
-    year: "2023",
-    make: "Honda",
-    model: "Civic",
-    mileage: 8200,
-    condition: "Like New",
-    image: "https://images.unsplash.com/photo-1605514996788-84925a7b76d7?auto=format&fit=crop&w=800&q=80"
-  }
-];
-
-const container = document.getElementById("listingsGrid");
-
-listings.forEach(car => {
-  const div = document.createElement("div");
-  div.className = "card";
-  div.innerHTML = `
-    <img src="${car.image}" alt="${car.title}">
-    <div class="card-content">
-      <h4>${car.title}</h4>
-      <p>${car.year} ${car.make} ${car.model} • ${car.mileage.toLocaleString()} mi</p>
-      <p class="price">$${car.price.toLocaleString()}</p>
-      <p>${car.location}</p>
-      <p>${car.condition}</p>
-      ${car.tag ? `<span class="tag">${car.tag}</span>` : ""}
+    <div class="footer-grid">
+        <div>
+            <h4>My Vehicle Report</h4>
+            <p>Your trusted companion for car history and maintenance tracking.</p>
+        </div>
+        <div>
+            <h4>Company</h4>
+            <a href="./privacy-policy.html">Privacy Policy</a>
+            <a href="mailto:swingsureta@gmail.com">Contact Us</a>
+        </div>
+        <div>
+            <h4>Features</h4>
+            <a href="#features">Maintenance Tracking</a>
+            <a href="#features">Fuel Economy</a>
+            <a href="#features">Analytics</a>
+        </div>
     </div>
-  `;
-  container.appendChild(div);
-});
-</script>
+    <p class="copyright">© 2025 Trevor Abrahamson. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
