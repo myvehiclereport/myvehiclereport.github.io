@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Vehicle Report - Complete Car Maintenance Tracker</title>
-<meta name="description" content="Track maintenance, fuel economy, and mileage in one simple app. Your car's complete history, made easy.">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My Vehicle Report — Complete Car Maintenance Tracker</title>
+<meta name="description" content="Track maintenance, fuel economy, and mileage in one simple app. Your car’s complete history, made easy.">
+
 <style>
+:root {
+    --bg-dark: #1f2123;
+    --bg-card: #2b2d30;
+    --accent: #ffb45a;
+    --accent-dark: #bb6b00;
+    --text-light: #e8e8e8;
+    --text-muted: #cfcfcf;
+    --border: #3c3f42;
+    --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -13,251 +25,274 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: var(--font-main);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
     line-height: 1.6;
-    color: #E8E8E8;
-    background: #1F2123;
     min-height: 100vh;
-}
-
-a {
-    text-decoration: none;
+    scroll-behavior: smooth;
 }
 
 .container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
 }
 
+/* HEADER */
 header {
-    padding: 2rem 0;
     text-align: center;
+    padding: 3rem 0 2rem;
+    animation: fadeIn 1s ease forwards;
 }
 
 h1 {
-    color: #FFFFFF;
     font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
+    font-weight: 800;
+    color: #fff;
 }
 
 .tagline {
-    color: #CFCFCF;
     font-size: 1.2rem;
-    margin-bottom: 2rem;
+    color: var(--text-muted);
     font-weight: 300;
+    margin-top: 0.5rem;
 }
 
+/* HERO */
 .hero {
-    background: #2B2D30;
-    border-radius: 24px;
-    padding: 4rem 2rem;
-    margin: 2rem 0;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    background: var(--bg-card);
+    border-radius: 28px;
     text-align: center;
+    padding: 5rem 2rem;
+    margin: 3rem 0;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    transition: all 0.4s ease;
 }
 
-.hero-heading,
-.cta-heading {
-    font-size: 2.2rem;
-    color: #FFB45A;
+.hero:hover {
+    box-shadow: 0 25px 80px rgba(255, 180, 90, 0.1);
+}
+
+.hero-heading {
+    color: var(--accent);
+    font-size: 2.4rem;
+    font-weight: 700;
     margin-bottom: 1rem;
 }
 
-.hero-text,
-.cta-text {
+.hero-text {
+    max-width: 620px;
+    margin: 0 auto 2.5rem;
+    color: var(--text-muted);
     font-size: 1.1rem;
-    color: #CFCFCF;
-    max-width: 600px;
-    margin: 0 auto 2rem;
 }
 
+/* BUTTONS */
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    color: var(--bg-dark);
+}
+
+.btn-primary:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background: var(--accent);
+    color: var(--bg-dark);
+    transform: translateY(-2px);
+}
+
+/* FEATURES */
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    margin: 3rem 0;
+    margin: 4rem 0;
 }
 
 .feature-card {
-    background: #2B2D30;
-    padding: 2rem;
+    background: var(--bg-card);
     border-radius: 16px;
+    padding: 2rem;
     text-align: center;
-    border: 1px solid #3C3F42;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
 }
 
 .feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(255,180,90,0.3);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(255, 180, 90, 0.25);
 }
 
 .feature-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, #BB6B00, #FFB45A);
+    background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+    color: var(--bg-dark);
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2rem;
     margin: 0 auto 1.5rem;
-    color: #1F2123;
 }
 
+/* CTA SECTION */
 .cta-section {
     text-align: center;
-    padding: 4rem 2rem;
+    padding: 5rem 2rem;
 }
 
-.cta-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 2rem 0;
-}
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 2rem;
-    background: #BB6B00;
-    color: #1F2123;
-    border-radius: 12px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background: #FFB45A;
-    transform: translateY(-2px);
-}
-
-.btn-outline {
-    background: transparent;
-    border: 2px solid #FFB45A;
-    color: #FFB45A;
-}
-
-.btn-outline:hover {
-    background: #FFB45A;
-    color: #1F2123;
-}
-
-.btn-appstore {
-    background: linear-gradient(135deg, #FFB45A, #FF8C42);
+.cta-heading {
+    color: var(--accent);
+    font-size: 2.2rem;
     font-weight: 700;
-    font-size: 1.1rem;
+    margin-bottom: 1rem;
 }
 
-.btn-appstore:hover {
-    filter: brightness(1.1);
+.cta-text {
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 2rem;
 }
 
+.note {
+    color: var(--text-muted);
+    opacity: 0.8;
+    margin-top: 1rem;
+}
+
+/* FOOTER */
 footer {
-    background: #1F2123;
-    color: #E8E8E8;
+    background: var(--bg-dark);
+    color: var(--text-muted);
     padding: 3rem 0;
-    margin-top: 4rem;
+    border-top: 1px solid var(--border);
 }
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
 }
 
 .footer-section h3 {
+    color: #fff;
     margin-bottom: 1rem;
-    color: #FFFFFF;
 }
 
 .footer-section a {
-    color: #CFCFCF;
     display: block;
+    color: var(--text-muted);
     margin-bottom: 0.5rem;
     transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
-    color: #FFB45A;
+    color: var(--accent);
 }
 
 .copyright {
     text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid #3C3F42;
     color: #86868b;
+    font-size: 0.9rem;
+    padding-top: 2rem;
 }
 
-.note {
-    color: #CFCFCF;
-    margin-top: 1rem;
-    opacity: 0.8;
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 768px) {
     h1 { font-size: 2.2rem; }
-    .tagline { font-size: 1rem; }
-    .hero { padding: 2rem 1rem; }
-    .features-grid { grid-template-columns: 1fr; }
-    .cta-buttons { flex-direction: column; align-items: center; }
-    .btn { width: 100%; max-width: 300px; justify-content: center; }
+    .hero { padding: 3rem 1rem; }
+    .cta-buttons { flex-direction: column; }
+    .btn { width: 100%; max-width: 280px; }
 }
 </style>
 </head>
+
 <body>
 
 <div class="container">
     <header>
         <h1>My Vehicle Report</h1>
-        <p class="tagline">Your car's complete history, organized and accessible</p>
+        <p class="tagline">Your car’s complete history, organized and accessible</p>
     </header>
 
     <section class="hero">
-        <h2 class="hero-heading">Take Control of Your Vehicle's Story</h2>
-        <p class="hero-text">Track maintenance, fuel efficiency, and mileage in one beautiful, private app designed for drivers who value their time and their ride.</p>
+        <h2 class="hero-heading">Take Control of Your Vehicle’s Story</h2>
+        <p class="hero-text">
+            Track maintenance, fuel efficiency, and mileage in one intuitive, private app — built for drivers who value time and care about their ride.
+        </p>
         <div class="cta-buttons">
             <a href="#features" class="btn btn-outline">Explore Features</a>
-            <a href="./privacy-policy.html" class="btn">Privacy Policy</a>
+            <a href="./privacy-policy.html" class="btn btn-primary">Privacy Policy</a>
         </div>
     </section>
 
-    <section class="features-grid" id="features">
+    <section id="features" class="features-grid">
         <div class="feature-card">
             <div class="feature-icon">🛠️</div>
             <h3>Maintenance Tracking</h3>
-            <p>Record all service, repairs, and parts history so nothing is forgotten.</p>
+            <p>Log all services, repairs, and parts — never lose track of your car’s health again.</p>
         </div>
         <div class="feature-card">
             <div class="feature-icon">⛽</div>
             <h3>Fuel Economy</h3>
-            <p>Track consumption and efficiency for cost savings and better performance.</p>
+            <p>Monitor fuel costs and efficiency to maximize performance and savings.</p>
         </div>
         <div class="feature-card">
             <div class="feature-icon">📊</div>
             <h3>Mileage Analytics</h3>
-            <p>Visualize trends and maintenance schedules with clear reports.</p>
+            <p>Visualize trends, track distance, and predict upcoming maintenance.</p>
         </div>
         <div class="feature-card">
             <div class="feature-icon">💾</div>
             <h3>Export & Import</h3>
-            <p>Easily export and restore your full vehicle history across devices.</p>
+            <p>Transfer your entire vehicle history securely between devices.</p>
         </div>
     </section>
 
     <section class="cta-section">
         <h2 class="cta-heading">Ready to Get Started?</h2>
-        <p class="cta-text">Organize your car history efficiently and securely.</p>
+        <p class="cta-text">Keep your car records organized — all in one place, for life.</p>
         <div class="cta-buttons">
-            <a href="https://apps.apple.com/us/app/my-vehicle-report/id6754545296" class="btn btn-appstore">Download on the App Store</a>
-            <a href="./privacy-policy.html" class="btn">Privacy Policy</a>
+            <a href="https://apps.apple.com/us/app/my-vehicle-report/id6754545296" class="btn btn-primary">Download on the App Store</a>
+            <a href="./privacy-policy.html" class="btn btn-outline">Privacy Policy</a>
         </div>
         <p class="note">Free to download • No subscriptions • One-time purchase</p>
     </section>
@@ -268,7 +303,7 @@ footer {
         <div class="footer-content">
             <div class="footer-section">
                 <h3>My Vehicle Report</h3>
-                <p class="note">Your car's complete history, made simple.</p>
+                <p class="note">Your car’s complete history, made simple.</p>
             </div>
             <div class="footer-section">
                 <h3>Resources</h3>
