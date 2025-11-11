@@ -28,7 +28,10 @@ function displayVehicles(vehicles) {
         </div>
         <div class="vehicle-location">📍 ${v.location}</div>
         ${v.verified ? '<div class="verified-badge">✓ Verified Report</div>' : ''}
-        <button class="view-details-btn" onclick="viewVehicleDetails('${v.id}')">View Details & Contact</button>
+        <button class="view-details-btn" onclick="window.location.href='/marketplace/vehicle.html?id=${vehicle.id}'">
+  View Details & Contact
+</button>
+
       </div>
     </div>`).join('');
 }
