@@ -8,10 +8,18 @@ const sampleVehicles = [
 
 function displayVehicles(vehicles) {
   const grid = document.getElementById('vehicleGrid');
+  if (!grid) return;
+
   if (!vehicles.length) {
-    grid.innerHTML = `<div class="empty-state"><div class="empty-state-icon">🔍</div><h3>No vehicles found</h3><p>Try adjusting your search filters</p></div>`;
+    grid.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-state-icon">🔍</div>
+        <h3>No vehicles found</h3>
+        <p>Try adjusting your search filters</p>
+      </div>`;
     return;
   }
+
   grid.innerHTML = vehicles.map(v => `
     <div class="vehicle-card" data-id="${v.id}">
       <div class="vehicle-image">${v.image}</div>
@@ -28,12 +36,12 @@ function displayVehicles(vehicles) {
         </div>
         <div class="vehicle-location">📍 ${v.location}</div>
         ${v.verified ? '<div class="verified-badge">✓ Verified Report</div>' : ''}
-        <button class="view-details-btn" onclick="window.location.href='/marketplace/vehicle.html?id=${vehicle.id}'">
-  View Details & Contact
-</button>
-
+        <button class="view-details-btn" onclick="window.location.href='/marketplace/vehicle.html?id=${v.id}'">
+          View Details & Contact
+        </button>
       </div>
-    </div>`).join('');
+    </div>
+  `).join('');
 }
 
 function filterVehicles() {
@@ -61,18 +69,12 @@ function filterVehicles() {
     );
     return matchesSearch && matchesMake && matchesPrice && matchesYear;
   });
+
   displayVehicles(filtered);
 }
 
-function viewVehicleDetails(id) {
-  const v = sampleVehicles.find(x => x.id === id);
-  if (v) {
-    alert(`${v.make} ${v.model} (${v.year})\nPrice: $${v.price.toLocaleString()}\nMileage: ${v.mileage.toLocaleString()} mi\nLocation: ${v.location}\n\nUse the My Vehicle Report app to contact the seller.`);
-  }
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-  setTimeout(() => displayVehicles(sampleVehicles), 1000);
+  displayVehicles(sampleVehicles);
   ['searchInput','makeFilter','priceFilter','yearFilter'].forEach(id => {
     document.getElementById(id).addEventListener('input', filterVehicles);
     document.getElementById(id).addEventListener('change', filterVehicles);
