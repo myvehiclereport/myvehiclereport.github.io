@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vehicle Details - My Vehicle Report</title>
-  <meta name="description" content="View detailed vehicle information and verified maintenance history on My Vehicle Report Marketplace.">
+  <meta name="description" content="View detailed vehicle information, verified history, and contact trusted sellers directly through My Vehicle Report.">
   <link rel="stylesheet" href="/assets/css/marketplace.css" />
   <script defer src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
   <script defer src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
@@ -23,8 +23,8 @@
   </nav>
 </header>
 
-<div class="container">
-  <div id="vehicleDetail" class="vehicle-detail">
+<div class="container vehicle-detail">
+  <div id="vehicleDetail">
     <div class="loading-state">
       <div class="loading-spinner"></div>
       <p>Loading vehicle details...</p>
@@ -32,10 +32,10 @@
   </div>
 </div>
 
-<div class="footer">
+<footer class="footer">
   <p>© 2025 Trevor Abrahamson. All rights reserved.</p>
   <p><a href="/marketplace/">← Back to Marketplace</a></p>
-</div>
+</footer>
 
 </body>
 </html>
