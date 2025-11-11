@@ -1,3 +1,4 @@
+<!-- Updated index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,52 +14,62 @@
 </head>
 <body>
 
-<header>
-  <h1>My Vehicle Report</h1>
-  <nav>
-    <a href="/index.html">Home</a>
-    <a href="/marketplace/">Marketplace</a>
-    <a href="/privacy-policy/">Privacy</a>
-    <a href="/terms/">Terms</a>
-  </nav>
+<header class="header">
+  <div class="header-container">
+    <a href="/" class="logo">
+      <div class="logo-icon">MVR</div>
+      <div class="logo-text">My Vehicle Report</div>
+    </a>
+    <nav class="nav">
+      <a href="/index.html" class="nav-link">Home</a>
+      <a href="/marketplace/" class="nav-link active">Marketplace</a>
+      <a href="/reports/" class="nav-link">Reports</a>
+      <a href="/contact/" class="nav-link">Contact</a>
+    </nav>
+  </div>
 </header>
 
 <div class="container">
   <div class="page-header">
-    <h1>Vehicle Marketplace</h1>
-    <p>Browse verified vehicles with complete history reports. Connect directly with sellers through our secure platform.</p>
+    <h1 class="page-title">Vehicle Marketplace</h1>
+    <p class="page-subtitle">Browse our selection of quality vehicles with verified history reports. Connect directly with trusted sellers through our secure platform.</p>
   </div>
 
   <div class="marketplace-controls">
-    <div class="search-box">
-      <input type="text" id="searchInput" placeholder="Search by make, model, VIN, or location...">
-    </div>
-    <div class="filter-controls">
-      <select class="filter-select" id="makeFilter">
-        <option value="">All Makes</option>
-        <option value="Toyota">Toyota</option>
-        <option value="Honda">Honda</option>
-        <option value="Ford">Ford</option>
-        <option value="Chevrolet">Chevrolet</option>
-        <option value="BMW">BMW</option>
-        <option value="Mercedes-Benz">Mercedes-Benz</option>
-      </select>
-      <select class="filter-select" id="priceFilter">
-        <option value="">Any Price</option>
-        <option value="0-5000">Under $5,000</option>
-        <option value="5000-10000">$5,000 - $10,000</option>
-        <option value="10000-20000">$10,000 - $20,000</option>
-        <option value="20000-50000">$20,000 - $50,000</option>
-        <option value="50000+">Over $50,000</option>
-      </select>
-      <select class="filter-select" id="yearFilter">
-        <option value="">Any Year</option>
-        <option value="2020-2025">2020-2025</option>
-        <option value="2015-2019">2015-2019</option>
-        <option value="2010-2014">2010-2014</option>
-        <option value="2000-2009">2000-2009</option>
-        <option value="1990-1999">1990-1999</option>
-      </select>
+    <div class="controls-grid">
+      <div class="search-box">
+        <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search by make, model, location...">
+      </div>
+      <div class="filter-grid">
+        <select class="filter-select" id="makeFilter">
+          <option value="">All Makes</option>
+          <option value="Toyota">Toyota</option>
+          <option value="Honda">Honda</option>
+          <option value="Ford">Ford</option>
+          <option value="Chevrolet">Chevrolet</option>
+          <option value="BMW">BMW</option>
+          <option value="Mercedes-Benz">Mercedes-Benz</option>
+        </select>
+        <select class="filter-select" id="priceFilter">
+          <option value="">Any Price</option>
+          <option value="0-5000">Under $5,000</option>
+          <option value="5000-10000">$5,000 - $10,000</option>
+          <option value="10000-20000">$10,000 - $20,000</option>
+          <option value="20000-50000">$20,000 - $50,000</option>
+          <option value="50000+">Over $50,000</option>
+        </select>
+        <select class="filter-select" id="yearFilter">
+          <option value="">Any Year</option>
+          <option value="2020-2025">2020-2025</option>
+          <option value="2015-2019">2015-2019</option>
+          <option value="2010-2014">2010-2014</option>
+          <option value="2000-2009">2000-2009</option>
+          <option value="1990-1999">1990-1999</option>
+        </select>
+      </div>
     </div>
   </div>
 
@@ -70,10 +81,17 @@
   </div>
 </div>
 
-<div class="footer">
-  <p>© 2025 Trevor Abrahamson. All rights reserved.</p>
-  <p><a href="/index.html">← Back to Home</a> | <a href="/privacy-policy/">Privacy Policy</a></p>
-</div>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-links">
+      <a href="/privacy-policy/" class="footer-link">Privacy Policy</a>
+      <a href="/terms/" class="footer-link">Terms of Service</a>
+      <a href="/contact/" class="footer-link">Contact Us</a>
+      <a href="/about/" class="footer-link">About</a>
+    </div>
+    <p class="footer-copyright">© 2025 My Vehicle Report. All rights reserved.</p>
+  </div>
+</footer>
 
 </body>
 </html>
