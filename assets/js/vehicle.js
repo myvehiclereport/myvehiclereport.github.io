@@ -1,5 +1,3 @@
-// /assets/js/vehicle.js
-
 // Sample fake vehicles dataset
 const vehicles = [
   {
@@ -17,8 +15,7 @@ const vehicles = [
     color: "Silver",
     vin: "4T1BF1FK0LU123456",
     verified: true,
-    description:
-      "Clean title, single owner, well-maintained sedan with no accidents. Comes with a complete My Vehicle Report history. Perfect daily driver with great fuel efficiency and reliability.",
+    description: "Clean title, single owner, well-maintained sedan with no accidents. Comes with a complete My Vehicle Report history. Perfect daily driver with great fuel efficiency and reliability."
   },
   {
     id: "2",
@@ -35,8 +32,7 @@ const vehicles = [
     color: "Black",
     vin: "2HGFC2F68KH512345",
     verified: true,
-    description:
-      "Reliable compact car with great gas mileage. Recently serviced, all maintenance records included. Bluetooth, backup camera, and sport trim.",
+    description: "Reliable compact car with great gas mileage. Recently serviced, all maintenance records included. Bluetooth, backup camera, and sport trim."
   },
   {
     id: "3",
@@ -53,8 +49,7 @@ const vehicles = [
     color: "Blue",
     vin: "1FTEW1EP2MFA12345",
     verified: true,
-    description:
-      "One-owner truck with low miles. Comes with My Vehicle Report verified service record and upgraded towing package. Ready for work or play.",
+    description: "One-owner truck with low miles. Comes with My Vehicle Report verified service record and upgraded towing package. Ready for work or play."
   },
   {
     id: "4",
@@ -71,8 +66,7 @@ const vehicles = [
     color: "White",
     vin: "WBA5R1C02LF123456",
     verified: false,
-    description:
-      "Luxury sedan with all-wheel drive, premium interior, and excellent handling. Detailed vehicle report available through My Vehicle Report.",
+    description: "Luxury sedan with all-wheel drive, premium interior, and excellent handling. Detailed vehicle report available through My Vehicle Report."
   },
   {
     id: "5",
@@ -89,12 +83,11 @@ const vehicles = [
     color: "Pearl White",
     vin: "5YJ3E1EA5MF123456",
     verified: true,
-    description:
-      "Fully electric sedan with dual-motor AWD, premium connectivity, and full self-driving hardware. Includes verified My Vehicle Report with charging history.",
-  },
+    description: "Fully electric sedan with dual-motor AWD, premium connectivity, and full self-driving hardware. Includes verified My Vehicle Report with charging history."
+  }
 ];
 
-// Helper: get ID from URL
+// Get the vehicle ID from the URL
 function getVehicleId() {
   const params = new URLSearchParams(window.location.search);
   return params.get("id");
@@ -102,9 +95,10 @@ function getVehicleId() {
 
 function loadVehicleDetails() {
   const id = getVehicleId();
-  const vehicle = vehicles.find((v) => v.id === id);
-
+  const vehicle = vehicles.find(v => v.id === id);
   const container = document.getElementById("vehicleDetail");
+
+  if (!container) return;
 
   if (!vehicle) {
     container.innerHTML = `
@@ -119,8 +113,7 @@ function loadVehicleDetails() {
   container.innerHTML = `
     <div class="vehicle-card" style="max-width:850px;margin:auto;">
       <div class="vehicle-image">
-        <img src="${vehicle.image}" 
-             alt="${vehicle.make} ${vehicle.model}" 
+        <img src="${vehicle.image}" alt="${vehicle.make} ${vehicle.model}"
              style="width:100%;height:320px;object-fit:cover;border-radius:12px 12px 0 0;">
       </div>
       <div class="vehicle-details">
@@ -150,9 +143,7 @@ function loadVehicleDetails() {
 }
 
 function contactSeller(vehicleName) {
-  alert(
-    `To contact the seller for ${vehicleName}, please use the My Vehicle Report mobile app or send us an inquiry form (feature coming soon).`
-  );
+  alert(`To contact the seller for ${vehicleName}, please use the My Vehicle Report mobile app or our upcoming inquiry form.`);
 }
 
 document.addEventListener("DOMContentLoaded", loadVehicleDetails);
