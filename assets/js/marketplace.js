@@ -20,32 +20,29 @@ function displayVehicles(vehicles) {
     return;
   }
 
-  grid.innerHTML = vehicles
-    .map(
-      (v) => `
-      <div class="vehicle-card list-card" data-id="${v.id}">
-        <div class="vehicle-image-wrapper">
-          <img src="${v.image}" alt="${v.make} ${v.model}" class="vehicle-thumb" />
+  grid.innerHTML = vehicles.map(v => `
+    <div class="vehicle-row">
+      <div class="vehicle-thumb">
+        <img src="${v.image}" alt="${v.make} ${v.model}" loading="lazy">
+      </div>
+      <div class="vehicle-info">
+        <h3>${v.year} ${v.make} ${v.model}</h3>
+        <div class="vehicle-meta">
+          <span>📍 ${v.location}</span>
+          <span>📏 ${v.mileage.toLocaleString()} mi</span>
+          <span>⚙️ ${v.transmission}</span>
+          <span>⛽ ${v.fuelType}</span>
         </div>
-        <div class="vehicle-info">
-          <div class="vehicle-header">
-            <h3 class="vehicle-title">${v.year} ${v.make} ${v.model}</h3>
-            <span class="vehicle-price">$${v.price.toLocaleString()}</span>
-          </div>
-          <div class="vehicle-meta">
-            <span>📍 ${v.location}</span>
-            <span>⚙️ ${v.transmission}</span>
-            <span>⛽ ${v.fuelType}</span>
-            <span>📏 ${v.mileage.toLocaleString()} mi</span>
-          </div>
-          ${v.verified ? `<div class="verified-badge">✓ Verified Report</div>` : ""}
-          <button class="view-details-btn" onclick="window.location.href='/marketplace/vehicle.html?id=${v.id}'">
-            View Details & Contact
-          </button>
-        </div>
-      </div>`
-    )
-    .join("");
+        ${v.verified ? `<div class="verified-badge">✓ Verified Report</div>` : ""}
+      </div>
+      <div class="vehicle-actions">
+        <div class="vehicle-price">$${v.price.toLocaleString()}</div>
+        <button class="view-details-btn" onclick="window.location.href='/marketplace/vehicle.html?id=${v.id}'">
+          View Details
+        </button>
+      </div>
+    </div>
+  `).join("");
 }
 
 function filterVehicles() {
@@ -54,8 +51,8 @@ function filterVehicles() {
   const price = document.getElementById("priceFilter").value;
   const year = document.getElementById("yearFilter").value;
 
-  const filtered = sampleVehicles.filter((v) => {
-    const matchesSearch = !s || [v.make, v.model, v.location].some((f) => f.toLowerCase().includes(s));
+  const filtered = sampleVehicles.filter(v => {
+    const matchesSearch = !s || [v.make, v.model, v.location].some(f => f.toLowerCase().includes(s));
     const matchesMake = !make || v.make === make;
     const matchesPrice =
       !price ||
@@ -91,7 +88,7 @@ function filterVehicles() {
 
 document.addEventListener("DOMContentLoaded", () => {
   displayVehicles(sampleVehicles);
-  ["searchInput", "makeFilter", "priceFilter", "yearFilter"].forEach((id) => {
+  ["searchInput", "makeFilter", "priceFilter", "yearFilter"].forEach(id => {
     document.getElementById(id).addEventListener("input", filterVehicles);
     document.getElementById(id).addEventListener("change", filterVehicles);
   });
